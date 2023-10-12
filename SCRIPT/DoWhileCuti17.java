@@ -15,18 +15,20 @@ public class DoWhileCuti17 {
             System.out.print("Apakah anda ingin mengambil cuti (y/t)? ");
             konfirmasi = sc.next();
 
-            if (konfirmasi.equalsIgnoreCase("y")) {
-                System.out.print("Jumlah hari: ");
-                jumlahHari = sc.nextInt();
+                if (konfirmasi.equalsIgnoreCase("y")) {
+                    System.out.print("Jumlah hari: ");
+                    jumlahHari = sc.nextInt();
 
-                if (jumlahHari <= jatahCuti) {
-                    jatahCuti -= jumlahHari;
-                    System.out.println("Sisa jatah cuti: " + jatahCuti);
-                } else {
-                    System.out.printf("Invalid sisa jatah cuti Anda %d !\n", jatahCuti);
-                    continue;
+                    if (jumlahHari <= jatahCuti) {
+                        jatahCuti -= jumlahHari;
+                        System.out.println("Sisa jatah cuti: " + jatahCuti);
+                    } else {
+                        System.out.printf("Invalid sisa jatah cuti Anda %d !\n", jatahCuti);
+                        continue;
+                    }
+                } else if (konfirmasi.equalsIgnoreCase("t")) {
+                    break;
                 }
-            }
         } while (jatahCuti > 0);
     }
 }
